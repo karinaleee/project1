@@ -46,12 +46,12 @@ def uniform_cost_search(start, dirty): # using a priority queue
     order = 0
     initial = (start[0], start[1], dirty)
    
-    heapq.heappush(front, (0, order, initial, []))
+    heapq.heappush(front, (0, order, initial, [])) 
     best_path = {initial: 0}
     nodes_gen = 1
     nodes_expand = 0
 
-    moves = [('N',(-1,0)), ('S',(1,0)), ('E',(0,1)), ('W',(0,-1))]
+    moves = [('N',(-1,0)), ('S',(1,0)), ('E',(0,1)), ('W',(0,-1))] #move coords
 
     while front:
         cost, _, (row, col, dirt), path = heapq.heappop(front)
@@ -101,7 +101,7 @@ def depth_first_search(start, dirty):
 
     moves = [('N',(-1,0)), ('S',(1,0)), ('E',(0,1)), ('W',(0,-1))]
 
-    while stack:
+    while stack: #stack 
         row, col, dirt, path = stack.pop()
         nodes_expand += 1
 
